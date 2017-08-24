@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Order";
+}
+
+<div class="row" style="margin-top:50px;">
+    <div class="breadcrumb success">
+        <h2 class="text-center text-danger">Order</h2>
+    </div>
+</div>
+<form method="post" id="frm-report">
+    <div class="row">
+        <div class="col-sm-6 col-sm-offset-3 clearfix">
+            <div class="form-group">
+                <label for="OrderID">Order</label>
+                @Html.DropDownList("ID", (SelectList)ViewBag.List, "OrderID", new { @class = "form-control" })
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" id="btnReporte" class="btn btn-info">Ver <i class="glyphicon glyphicon-eye-open"></i></button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="row">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div id="showReport" class="table-responsive">
+        </div>
+    </div>
+</div>
+
+<div class="row" id="contentPDF">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>OrderID</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody class="OrderDetails">
+        </tbody>
+        <tfoot class="total">
+        </tfoot>
+    </table>
+</div>
